@@ -1,3 +1,4 @@
+#include <vector>
 #include "./CmdLineParser.hpp" 
 #include <tclap/CmdLine.h>
 
@@ -9,6 +10,16 @@ std::ostream& LArVox::operator<<(std::ostream& os, const Options & opt) {
 	os << opt.out_to_root << " , " << opt.root_filename_in << " , " << opt.root_filename_out << std::endl;
 	os <<  opt.root_treename << " , " << opt.root_branchname << std::endl;
 
+	std::vector<std::string>::iterator feature_names_it = opt.feature_names.begin();
+	std::vector<double>::iterator thresholds_it = opt.thresholds.begin();
+	std::vector<double>::iterator windows_it = opt.windows.begin();
+	while(feature_names_it != opt.feature_names.end()) os << *feature_names_it << " ";
+	os << std::endl;
+	while(thresholds_it != opt.thresholds.end()) os << *thresholds_it << " ";
+	os << std::endl;
+	while(windows_it != opt.windows.end()) os << *windows_it << " ";
+	os << std::endl;
+ 
 	return os;
 }
 LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
@@ -27,6 +38,14 @@ LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 		TCLAP::ValueArg<std::string> root_treename_arg("T", "tree", "ROOT TTree name (for input and output)", false, "genie_qel_run", "string");
 		TCLAP::ValueArg<std::string> root_branchname_arg("B", "branch", "ROOT TBranch (must contain TClonesArray of TLorentzVector)", false, "hits", "string");
 		TCLAP::SwitchArg out_to_root_arg("q", "quiet", "Supress output to ROOT TFile", false); 
+		std::vector<std::string> allowed_features;
+		allowed_features.push_back("forster");
+		allowed_features.push_back("forster_thresh");
+		allowed_features.push_back("min_eval");
+		TCLAP::ValuesConstraint<std::string> allowed_features_constraint(allowed_features);
+		TCLAP::MultiArg<std::string> features_arg("F", "feature", "Name of the feature identifying scalar", false, &allowed_features_constraint);  
+		TCLAP::MultiArg<double> thresholds_arg("", "thresh", "Feature voxel threshold (i'th command line instance of thresh binds to i'th instance of -F)", false, "double")
+		TCLAP::MultiArg<double> windows_arg("", "window", "Feature voxel exclusion window for non-max-supression algorithm (i'th command line instance of thresh binds to i'th instance of -F)", false, "double");
 		cmd.add(root_filename_in_arg);
 		cmd.add(skipEvents_arg);
 		cmd.add(maxEvents_arg);
@@ -38,7 +57,9 @@ LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 		cmd.add(root_treename_arg);
 		cmd.add(root_branchname_arg);
 		cmd.add(out_to_root_arg);
-
+		cmd.add(features_arg);
+		cmd.add(thresholds_arg);
+		cmd.add(windows_arg);
 		cmd.parse(argc, argv);
 				
 		opt.parsed = true;
@@ -53,6 +74,9 @@ LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 		opt.root_branchname = root_branchname_arg.getValue();
 		opt.out_to_root = out_to_root_arg.getValue();
 		opt.root_filename_in = root_filename_in_arg.getValue();
+		opt.feature_names = features_arg.getValue();
+		opt.thresholds = thresholds_arg.getValue();
+		opt.windows = windows_arg.getValue();
 		return opt;
 
 	}

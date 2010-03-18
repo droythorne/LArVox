@@ -22,6 +22,10 @@ struct Options {
         std::string root_branchname;
        
 	 bool out_to_root;
+
+	std::vector<std::string> feature_names;
+	std::vector<double> thresholds;
+	std::vector<double> windows;
 };
 class CmdLineParser {
 	public:

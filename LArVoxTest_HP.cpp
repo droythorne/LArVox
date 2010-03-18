@@ -17,17 +17,20 @@ int main(int argc, char* argv[])
 { 
 	LArVox::CmdLineParser cmd;
 	LArVox::Options opt = cmd.parse(argc, argv);	
-
 	
 	LArVox::TreeToVoxSet* t2vox = new  LArVox::TreeToVoxSet(opt.root_filename_in, opt.root_treename, opt.root_branchname);
 	t2vox->skipEvents(opt.skipEvents);
 	int num_events_in_tree = t2vox->numEvents();
+// Insert a utility function here to determine the number, type and parameters of the features functions (contruct a vector comprising
+// objects of these types once a base class has been constructed which they all inherit from) 
 	LArVox::VoxSetToTree vstt(opt.root_filename_out, opt.root_treename);
+//these filenames are now redundant - replace with automatically generated branchnames which are aded to the output ROOT files with AppendClonesBranch
 	std::string forster_filename("forster.root");
 	std::string forster_thresh_filename("forster_thresh.root");
 	std::string forster_ev_filename("forster_ev.root");
 	std::cout << opt.root_filename_out << std::endl;
 	std::cout << "Entering event loop" << std::endl;
+//see above
 	LArVox::ScalarVoxSetToTree* for_tree = new LArVox::ScalarVoxSetToTree(forster_filename, opt.root_treename);
        	LArVox::ScalarVoxSetToTree* for_thresh_tree = new LArVox::ScalarVoxSetToTree(forster_thresh_filename, opt.root_treename); 
        	LArVox::ScalarVoxSetToTree* for_ev_tree = new LArVox::ScalarVoxSetToTree(forster_ev_filename, opt.root_treename); 
@@ -38,7 +41,7 @@ int main(int argc, char* argv[])
         LArVox::CrudeVoxelNonMaxSupp* nms = new LArVox::CrudeVoxelNonMaxSupp(fa);
         LArVox::CrudeVoxelNonMaxSupp* nmst = new LArVox::CrudeVoxelNonMaxSupp(fta);
 	LArVox::CrudeVoxelNonMaxSupp* nmsev = new LArVox::CrudeVoxelNonMaxSupp(mev);
-	// need to implement a facility for parsing these options
+	// need to implement a facility for parsing these options - DONE 18/03/10
 	nms->SetThreshold(0.00034);
 	nms->SetWindowSize(40);
         nmst->SetThreshold(0.7);
