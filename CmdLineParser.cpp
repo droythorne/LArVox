@@ -10,9 +10,9 @@ std::ostream& LArVox::operator<<(std::ostream& os, const Options & opt) {
 	os << opt.out_to_root << " , " << opt.root_filename_in << " , " << opt.root_filename_out << std::endl;
 	os <<  opt.root_treename << " , " << opt.root_branchname << std::endl;
 
-	std::vector<std::string>::iterator feature_names_it = opt.feature_names.begin();
-	std::vector<double>::iterator thresholds_it = opt.thresholds.begin();
-	std::vector<double>::iterator windows_it = opt.windows.begin();
+	std::vector<std::string>::const_iterator feature_names_it = opt.feature_names.begin();
+	std::vector<double>::const_iterator thresholds_it = opt.thresholds.begin();
+	std::vector<double>::const_iterator windows_it = opt.windows.begin();
 	while(feature_names_it != opt.feature_names.end()) os << *feature_names_it << " ";
 	os << std::endl;
 	while(thresholds_it != opt.thresholds.end()) os << *thresholds_it << " ";
@@ -25,6 +25,9 @@ std::ostream& LArVox::operator<<(std::ostream& os, const Options & opt) {
 LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 	LArVox::Options opt;
 	opt.parsed = false;
+	allowed_features_.push_back("forster");
+	allowed_features_.push_back("forster_thresh");
+	allowed_features_.push_back("min_eval");
 	try {
 		TCLAP::CmdLine cmd("LArVox_HP - implements 3D feature detection using variant of the Harris-Steven/Plessey algorithm",' ',"0.1");
 		TCLAP::UnlabeledValueArg<std::string> root_filename_in_arg("root_filename_in", "Input ROOT filename", true, "default_in.root", "string");
@@ -38,13 +41,9 @@ LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 		TCLAP::ValueArg<std::string> root_treename_arg("T", "tree", "ROOT TTree name (for input and output)", false, "genie_qel_run", "string");
 		TCLAP::ValueArg<std::string> root_branchname_arg("B", "branch", "ROOT TBranch (must contain TClonesArray of TLorentzVector)", false, "hits", "string");
 		TCLAP::SwitchArg out_to_root_arg("q", "quiet", "Supress output to ROOT TFile", false); 
-		std::vector<std::string> allowed_features;
-		allowed_features.push_back("forster");
-		allowed_features.push_back("forster_thresh");
-		allowed_features.push_back("min_eval");
-		TCLAP::ValuesConstraint<std::string> allowed_features_constraint(allowed_features);
+		TCLAP::ValuesConstraint<std::string> allowed_features_constraint(allowed_features_);
 		TCLAP::MultiArg<std::string> features_arg("F", "feature", "Name of the feature identifying scalar", false, &allowed_features_constraint);  
-		TCLAP::MultiArg<double> thresholds_arg("", "thresh", "Feature voxel threshold (i'th command line instance of thresh binds to i'th instance of -F)", false, "double")
+		TCLAP::MultiArg<double> thresholds_arg("", "thresh", "Feature voxel threshold (i'th command line instance of thresh binds to i'th instance of -F)", false, "double");
 		TCLAP::MultiArg<double> windows_arg("", "window", "Feature voxel exclusion window for non-max-supression algorithm (i'th command line instance of thresh binds to i'th instance of -F)", false, "double");
 		cmd.add(root_filename_in_arg);
 		cmd.add(skipEvents_arg);
@@ -61,7 +60,7 @@ LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 		cmd.add(thresholds_arg);
 		cmd.add(windows_arg);
 		cmd.parse(argc, argv);
-				
+
 		opt.parsed = true;
 		opt.skipEvents = skipEvents_arg.getValue();
 		opt.maxEvents = maxEvents_arg.getValue();
@@ -87,4 +86,31 @@ LArVox::Options LArVox::CmdLineParser::parse(int argc, char** argv) {
 
 
 }
-
+std::vector<std::string>& LArVox::CmdLineParser::getAllowedFeatures() { return allowed_features_;}
+LArVox::ScalarFieldAllocator::ScalarFieldAllocator(Options& opt, std::vector<std::string>& allowed_features) {
+	unsigned int thresh_size = opt.thresholds.size();
+	unsigned int wind_size = opt.windows.size();
+	for(int i=0; i<opt.feature_names.size(); i++) {
+		std::vector<std::string>::const_iterator all_feat_it = allowed_features.begin();
+		int feature_id = 0;
+		while(all_feat_it != allowed_features.end()) {
+			if(opt.feature_names[i].compare(*all_feat_it) == 0) {
+				switch(feature_id) {
+					case 0 : 
+						{
+							LArVox::ForsterAccessor fa;
+							scalars_.push_back(new LArVox::CrudeVoxelNonMaxSupp(fa));
+						}
+						break;
+					default : 
+						break;
+				}
+				if(i < thresh_size) scalars_.back()->SetThreshold(opt.thresholds[i]);
+				if(i < wind_size) scalars_.back()->SetWindowSize(opt.windows[i]);
+				break;
+			}
+			feature_id++;
+			all_feat_it++;
+		}
+	}
+}

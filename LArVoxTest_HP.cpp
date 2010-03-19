@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
 	LArVox::CmdLineParser cmd;
 	LArVox::Options opt = cmd.parse(argc, argv);	
 	
+	std::cout << opt;
 	LArVox::TreeToVoxSet* t2vox = new  LArVox::TreeToVoxSet(opt.root_filename_in, opt.root_treename, opt.root_branchname);
 	t2vox->skipEvents(opt.skipEvents);
 	int num_events_in_tree = t2vox->numEvents();
