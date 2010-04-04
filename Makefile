@@ -4,7 +4,7 @@ LIBRARIES=
 VOXEL_LIBRARIES=
 
 flags_for_gcc= -Wextra -Wfatal-errors -Wwrite-strings -Woverloaded-virtual -fno-nonansi-builtins -fno-gnu-keywords -fstrict-aliasing
-local_CFLAGS = -g $(flags_for_gcc)
+local_CFLAGS = -g -m32 $(flags_for_gcc)
 local_LDFLAGS= 
 ROOT_LIBS:=$(shell root-config --libs) -lSpectrum 
 ROOT_CFLAGS=`root-config --cflags`
