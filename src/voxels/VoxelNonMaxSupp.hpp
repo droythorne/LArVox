@@ -2,7 +2,8 @@
 #define V0XELS_VOXELNONMAXSUPP_HPP_
 
 #include <set>
-#include <list>
+#include <vector>
+#include "TLorentzVector.h"
 #include "voxels/Voxel.hpp"
 #include "voxels/VoxelSet.hpp"
 #include "voxels/VoxelTree.hpp"
@@ -43,7 +44,7 @@ class VoxelNonMaxSuppInterface {
 
 		virtual void SetThreshold(double thresh) = 0;
 		virtual void SetWindowSize(double win_size) = 0;
-		virtual std::list<Voxel_ptr> operator()(VoxelSet& v_set) = 0;
+		virtual std::vector<TLorentzVector> operator()(VoxelSet& v_set) = 0;
 };
 class CrudeVoxelNonMaxSupp : public VoxelNonMaxSuppInterface {
 	public:
@@ -51,7 +52,7 @@ class CrudeVoxelNonMaxSupp : public VoxelNonMaxSuppInterface {
 		~CrudeVoxelNonMaxSupp();
                 virtual void SetThreshold(double thresh);
                 virtual void SetWindowSize(double win_size);
-                virtual std::list<Voxel_ptr> operator()(VoxelSet& v_set);
+                virtual std::vector<TLorentzVector> operator()(VoxelSet& v_set);
 
 	private:
 
@@ -62,6 +63,7 @@ class CrudeVoxelNonMaxSupp : public VoxelNonMaxSuppInterface {
 		ScalarComparator scal_comp_;
 		std::set<Voxel_ptr, ScalarComparator> *v_std_set_;
 		
+		TLorentzVector vox_ptr_to_lorvec(const Voxel_ptr& vox_ptr);	
 };
 } // namespace LArVox
 #endif //VOXELS_NONMAXSUPP_HPP_

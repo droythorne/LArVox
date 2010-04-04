@@ -77,7 +77,6 @@ def plot_weights_from_generator(g, fig = figure(), skip = None) :
     y.append(voxel[0][1])
     z.append(voxel[0][2])    
     weight.append(voxel[0][3])
-   
   obj = points3d(x,y,z, weight, figure = fig, colormap = "cool", scale_mode = 'none', mask_points = skip, mode = "cube", scale_factor=20)
   return obj
 
@@ -98,9 +97,8 @@ def plot_lorvec_from_generator(g, fig = figure(), mask = None) :
 def plot_feature_voxels(voxels_file, features_file, tree_name, fig = figure(), scalar_val = 0, mask = None) :
   g_feat = read_root.event_reader(features_file, tree_name)
   g_vox = read_root.event_reader(voxels_file, tree_name)
+  figure(fig.name)
   while(1) :
-    figure(fig.name) 
-
     t_feat = g_feat.next() 
     t_feat.ResetBit(rdf.TObject.kMustCleanup)
     t_vox = g_vox.next()
@@ -111,7 +109,7 @@ def plot_feature_voxels(voxels_file, features_file, tree_name, fig = figure(), s
       obj1 = plot_scalvox_from_generator(g_vox_read, scalar_val, fig, mask)
     else :
       obj1 = plot_weights_from_generator(g_vox_read, fig, mask)
-    obj2 = plot_lorvec_from_generator(g_feat_read, figure(gcf()))
+      obj2 = plot_lorvec_from_generator(g_feat_read, figure(gcf()))
     yield (obj1, obj2)    
 def calc_hp(e1,e2,e3) :
   evals = [abs(e1),abs(e2),abs(e3)]

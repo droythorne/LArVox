@@ -22,9 +22,9 @@ LArVox::CrudeVoxelNonMaxSupp::~CrudeVoxelNonMaxSupp()
 }
 void LArVox::CrudeVoxelNonMaxSupp::SetThreshold(double thresh) {threshold_ = thresh;}
 void LArVox::CrudeVoxelNonMaxSupp::SetWindowSize(double win_size) {window_size_ = win_size;}
-std::list<LArVox::Voxel_ptr>  LArVox::CrudeVoxelNonMaxSupp::operator()(LArVox::VoxelSet& v_set) {
+std::vector<TLorentzVector>  LArVox::CrudeVoxelNonMaxSupp::operator()(LArVox::VoxelSet& v_set) {
 	
-	std::list<LArVox::Voxel_ptr> feature_voxels;
+	std::vector<TLorentzVector> feature_voxels;
 	LArVox::VoxelSet::index<LArVox::lex_xyz>::type& lex_index = v_set.get<LArVox::lex_xyz>();		
 	LArVox::VoxelSet::index<lex_xyz>::type::iterator vset_iter = lex_index.begin();
 	while(vset_iter != lex_index.end()) {
@@ -47,7 +47,8 @@ std::list<LArVox::Voxel_ptr>  LArVox::CrudeVoxelNonMaxSupp::operator()(LArVox::V
 		//std::cout << **std_set_iter << std::endl;
 		//std::cout << "done" << std::endl;
 		//std::cout << "feature_voxels.push_back(*std_set_iter)" << std::endl;
-		feature_voxels.push_back(*std_set_iter);
+		TLorentzVector temp_lor = vox_ptr_to_lorvec(*std_set_iter);
+		feature_voxels.push_back(temp_lor);
 		//std::cout << "done" << std::endl;
 		LArVox::Voxel_ptr_node vpn_temp(*std_set_iter);
                 std::vector<LArVox::Voxel_ptr_node>* vpn_vec = new std::vector<LArVox::Voxel_ptr_node>();
@@ -106,5 +107,10 @@ std::list<LArVox::Voxel_ptr>  LArVox::CrudeVoxelNonMaxSupp::operator()(LArVox::V
 	std::cout << "feature_voxels.size() = " << feature_voxels.size() << std::endl;
 	return feature_voxels;
 }
-	
+
+TLorentzVector LArVox::CrudeVoxelNonMaxSupp::vox_ptr_to_lorvec(const Voxel_ptr& vox) {
+	boost::shared_ptr<StructTensorVoxel> stvox = boost::dynamic_pointer_cast<StructTensorVoxel, Voxel>(vox);
+	TLorentzVector lorvec(stvox->get_x(), stvox->get_y(), stvox->get_z(), stvox->get_weight());
+	return lorvec;
+}
 	  

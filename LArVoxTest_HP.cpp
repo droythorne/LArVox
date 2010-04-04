@@ -26,15 +26,22 @@ int main(int argc, char* argv[])
 // objects of these types once a base class has been constructed which they all inherit from) 
 	LArVox::VoxSetToTree vstt(opt.root_filename_out, opt.root_treename);
 //these filenames are now redundant - replace with automatically generated branchnames which are aded to the output ROOT files with AppendClonesBranch
-	std::string forster_filename("forster.root");
-	std::string forster_thresh_filename("forster_thresh.root");
-	std::string forster_ev_filename("forster_ev.root");
+	std::string forster_branchname("forster.root");
+	std::vector<TLorentzVector> forster_vector;
+	std::string forster_thresh_branchname("forster_thresh.root");
+	std::vector<TLorentzVector> forster_thresh_vector;
+	std::string forster_ev_branchname("forster_ev.root");
+	std::vector<TLorentzVector> forster_ev_vector;
+	
 	std::cout << opt.root_filename_out << std::endl;
 	std::cout << "Entering event loop" << std::endl;
 //see above
-	LArVox::ScalarVoxSetToTree* for_tree = new LArVox::ScalarVoxSetToTree(forster_filename, opt.root_treename);
-       	LArVox::ScalarVoxSetToTree* for_thresh_tree = new LArVox::ScalarVoxSetToTree(forster_thresh_filename, opt.root_treename); 
-       	LArVox::ScalarVoxSetToTree* for_ev_tree = new LArVox::ScalarVoxSetToTree(forster_ev_filename, opt.root_treename); 
+
+	vstt.AppendClonesBranch(forster_ev_branchname, forster_ev_vector);
+	vstt.AppendClonesBranch(forster_branchname, forster_vector);
+	vstt.AppendClonesBranch(forster_thresh_branchname, forster_thresh_vector);
+
+	vstt.FixBranches();
 	LArVox::ForsterAccessor fa;
 	LArVox::ForsterThresholdAccessor fta;
 	LArVox::HPMinEigValAccessor mev;
@@ -68,18 +75,12 @@ int main(int argc, char* argv[])
 		//LArVox::VoxelSet_out_by<LArVox::lex_xyz>(*vset_ptr);	
 		(*hp)(*vset_ptr, opt.voxel_size, opt.scale_t, opt.gamma);
 		//	LArVox::VoxelSet_out_by<LArVox::lex_xyz>(*vset_ptr);
+        	forster_vector = (*nms)(*vset_ptr);
+		forster_thresh_vector = (*nmst)(*vset_ptr);
+		forster_ev_vector = (*nmsev)(*vset_ptr);
+
+
 		vstt(*vset_ptr);
-        	std::list<LArVox::Voxel_ptr> vox_list = (*nms)(*vset_ptr);
-		std::cout << "vox_list contains " << vox_list.size() << " voxels" << std::endl;
-		(*for_tree)(vox_list);
-		vox_list.clear();
-		vox_list = (*nmst)(*vset_ptr);
-		(*for_thresh_tree)(vox_list);
-		vox_list.clear();
-		vox_list = (*nmsev)(*vset_ptr);
-		(*for_ev_tree)(vox_list);
-
-
 		++num_processed_events;
 		
 		std::cout << "num_processed_events" << num_processed_events << std::endl;
@@ -87,9 +88,6 @@ int main(int argc, char* argv[])
 	std::cout << "exited processing - processed " << num_processed_events << " events\n";
 	delete t2vox;
 	delete hp;
-	delete for_tree;
-	delete for_thresh_tree;
-	delete for_ev_tree;
 	
 	delete nms;
 	delete nmst;

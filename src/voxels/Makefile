@@ -19,7 +19,7 @@ TreeToVoxSetTest : $(LIBRARIES) $(VOXEL_OBJ) TreeToVoxSetTest.o
 	gcc $(VOXEL_OBJ) -o  $@  -I . $(LDFLAGS) $(local_LDFLAGS) $(addprefix -l,$(LIBRARIES)) $(ROOT_LIBS) 
 TreeToVoxSetTest2 : $(LIBRARIES) $(VOXEL_OBJ) TreeToVoxSetTest2.o
 	gcc $(VOXEL_OBJ) TreeToVoxSetTest2.o -o  $@  -I . $(LDFLAGS) $(local_LDFLAGS) $(addprefix -l,$(LIBRARIES)) $(ROOT_LIBS) 
-TestVoxSetToTree : Voxel.o TreeToVoxSet.o VoxSetToTree.o TestVoxSetToTree.o
+TestVoxSetToTree : Voxel.o TreeToVoxSet.o VoxSetToTree.o TVoxel.o tvoxeldict.o TestVoxSetToTree.o TreeToTVoxel.o
 	gcc -o  $@  $^ $(LDFLAGS) $(local_LDFLAGS) $(addprefix -l,$(LIBRARIES)) $(ROOT_LIBS)
 TestVoxSetToTree_old :  Voxel.o TreeToVoxSet.o VoxSetToTree_old.o TestVoxSetToTree_old.o
 	gcc -o  $@  $^ $(LDFLAGS) $(local_LDFLAGS) $(addprefix -l,$(LIBRARIES)) $(ROOT_LIBS)
@@ -27,7 +27,10 @@ TestVoxelNonMaxSupp : Voxel.o TreeToVoxSet.o VoxelNonMaxSupp.o VoxelTree.o TestV
 	gcc -o  $@  $^ $(LDFLAGS) $(local_LDFLAGS) $(addprefix -l,$(LIBRARIES)) $(ROOT_LIBS)
 %.o : %.cpp
 	g++ $(CFLAGS) $(local_CFLAGS) -c $< $(INCFLAGS)
+tvoxeldict.cpp: TVoxel.hpp 
+	@rootcint $@ -c -p $^ TVoxel_linkdef.h
 .PHONY: clean
 clean:
 	rm -f TreeToVoxSetTest TestVoxSetToTree TestVoxelNonMaxSupp ./*.o
+	rm -f tvoxeldict.cpp tvoxeldict.h
 

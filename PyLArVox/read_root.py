@@ -59,7 +59,6 @@ def scalar_reader(t2):
   t2.SetBranchAddress(t2.GetListOfBranches().First().GetName(),tlorvec)
   tarrayd.Reset()
   t2.SetBranchAddress("voxel_scalars_branch", tarrayd)
-  
   for j in xrange(t2.GetEntries()) :
     t2.GetEntry(j)
     yield (tlorvec, tarrayd)
