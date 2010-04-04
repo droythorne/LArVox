@@ -1,0 +1,576 @@
+1 , 0 , 20 , 3 , 1 , 0.7 , 1.4
+0 , /home/epp/phraar/Documents/Programs/Voxels/events/genie-770MeVQELCC.root , /tmp/genie_qel.root
+genie_qel_run , hits
+
+
+
+/tmp/genie_qel.root
+Entering event loop
+forster_ev.root
+forster.root
+forster_thresh.root
+ clones_vector_.size() = 3
+vset.size() = 2922
+*check v_set_ptr empty 0
+Num elements of v_set = 2922performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 2
+feature_voxels.size() = 10
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2922
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 1 j= 1
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+num_processed_events1
+vset.size() = 2476
+*check v_set_ptr empty 0
+Num elements of v_set = 2476performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 2
+feature_voxels.size() = 11
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2476
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 1 j= 1
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+ i = 2 j= 10
+num_processed_events2
+vset.size() = 2027
+*check v_set_ptr empty 0
+Num elements of v_set = 2027performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 8
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2027
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+num_processed_events3
+vset.size() = 2637
+*check v_set_ptr empty 0
+Num elements of v_set = 2637performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 14
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2637
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+ i = 2 j= 10
+ i = 2 j= 11
+ i = 2 j= 12
+ i = 2 j= 13
+num_processed_events4
+vset.size() = 2515
+*check v_set_ptr empty 0
+Num elements of v_set = 2515performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 5
+feature_voxels.size() = 0
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2515
+features_input_vectors_.size() = 3
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+num_processed_events5
+vset.size() = 2032
+*check v_set_ptr empty 0
+Num elements of v_set = 2032performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 4
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2032
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+num_processed_events6
+vset.size() = 2791
+*check v_set_ptr empty 0
+Num elements of v_set = 2791performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 11
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2791
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+ i = 2 j= 10
+num_processed_events7
+vset.size() = 2201
+*check v_set_ptr empty 0
+Num elements of v_set = 2201performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 13
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2201
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+ i = 2 j= 10
+ i = 2 j= 11
+ i = 2 j= 12
+num_processed_events8
+vset.size() = 2258
+*check v_set_ptr empty 0
+Num elements of v_set = 2258performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 7
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2258
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+num_processed_events9
+vset.size() = 1980
+*check v_set_ptr empty 0
+Num elements of v_set = 1980performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 7
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 1980
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+num_processed_events10
+vset.size() = 1472
+*check v_set_ptr empty 0
+Num elements of v_set = 1472performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 7
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 1472
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+num_processed_events11
+vset.size() = 2567
+*check v_set_ptr empty 0
+Num elements of v_set = 2567performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 7
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2567
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+num_processed_events12
+vset.size() = 2656
+*check v_set_ptr empty 0
+Num elements of v_set = 2656performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 2
+feature_voxels.size() = 2
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2656
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 1 j= 1
+ i = 2 j= 0
+ i = 2 j= 1
+num_processed_events13
+vset.size() = 2772
+*check v_set_ptr empty 0
+Num elements of v_set = 2772performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 7
+feature_voxels.size() = 0
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2772
+features_input_vectors_.size() = 3
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+num_processed_events14
+vset.size() = 1552
+*check v_set_ptr empty 0
+Num elements of v_set = 1552performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 5
+feature_voxels.size() = 0
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 1552
+features_input_vectors_.size() = 3
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+num_processed_events15
+vset.size() = 2065
+*check v_set_ptr empty 0
+Num elements of v_set = 2065performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 14
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2065
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+ i = 2 j= 10
+ i = 2 j= 11
+ i = 2 j= 12
+ i = 2 j= 13
+num_processed_events16
+vset.size() = 1715
+*check v_set_ptr empty 0
+Num elements of v_set = 1715performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 0
+feature_voxels.size() = 8
+feature_voxels.size() = 0
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 1715
+features_input_vectors_.size() = 3
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+num_processed_events17
+vset.size() = 2630
+*check v_set_ptr empty 0
+Num elements of v_set = 2630performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 2
+feature_voxels.size() = 10
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2630
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 1 j= 1
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+ i = 2 j= 9
+num_processed_events18
+vset.size() = 2357
+*check v_set_ptr empty 0
+Num elements of v_set = 2357performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 2
+feature_voxels.size() = 9
+feature_voxels.size() = 0
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 2357
+features_input_vectors_.size() = 3
+ i = 1 j= 0
+ i = 1 j= 1
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+ i = 2 j= 4
+ i = 2 j= 5
+ i = 2 j= 6
+ i = 2 j= 7
+ i = 2 j= 8
+num_processed_events19
+vset.size() = 1417
+*check v_set_ptr empty 0
+Num elements of v_set = 1417performing ConvZ
+Perfoming ConvY
+Performing ConvX
+#KDRecon::HarrisPlessey::append_evecs(LArVox::VoxelSet::index<LArVox::lex_xyz>::type& index) 
+Exiting KDRecon::HarrisPlessey::append_evecs
+In LArVox::VoxelSet3DConvConcrete::~VoxelSet3DConvConcrete()
+delete *conv_it
+delete *conv_it
+delete *conv_it
+feature_voxels.size() = 1
+feature_voxels.size() = 4
+feature_voxels.size() = 1
+LArVox::VoxSetToTree::operator()(LArVox::VoxelSet& v_set), vset.size() = 1417
+features_input_vectors_.size() = 3
+ i = 0 j= 0
+ i = 1 j= 0
+ i = 2 j= 0
+ i = 2 j= 1
+ i = 2 j= 2
+ i = 2 j= 3
+num_processed_events20
+exited processing - processed 20 events
+******************************************************************************
+*Tree    :genie_qel_run: genie_qel_run                                          *
+*Entries :       20 : Total =         9654347 bytes  File  Size =    5735332 *
+*        :          : Tree compression factor =   1.68                       *
+******************************************************************************
+*Br    0 :voxel_data_branch :                                                *
+*Entries :       20 : Total  Size=    9643345 bytes  File Size  =    5735332 *
+*Baskets :       20 : Basket Size=      64000 bytes  Compression=   1.68     *
+*............................................................................*
+*Br    1 :forster_ev.root :                                                  *
+*Entries :       20 : Total  Size=       3509 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      64000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    2 :forster.root :                                                     *
+*Entries :       20 : Total  Size=       3499 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      64000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    3 :forster_thresh.root :                                              *
+*Entries :       20 : Total  Size=       3672 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      64000 bytes  Compression=   1.00     *
+*............................................................................*
