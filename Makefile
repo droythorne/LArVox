@@ -1,6 +1,5 @@
 prefix = /home/epp/phraar/Documents/Programs/Voxels
-larvox_version_number = 0.1
-larvox_root = $(prefix)/LArVox/$(larvox_version_number)
+larvox_root = $(prefix)/sandbox/LArVox
 LIBRARIES=
 VOXEL_LIBRARIES=
 
