@@ -1,0 +1,4 @@
+- modify Makefile clean to remove object files from subdirectories
+- find ROOT file with truth information and figure out how to merge this with output from new serialisation format (ie. add this truth info as a branch comprising TCLonesArray of TLorentzVectors to the VoxSetToTree class)
+- write a unit testing script (Python) that calculates efficiencies etc.
+
