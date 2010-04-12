@@ -24,6 +24,10 @@ LArVoxTest_HP : $(VOXEL_OBJ) $(LARVOX_OBJ)
 	g++ $(CFLAGS) $(local_CFLAGS) -c $< $(INCFLAGS) -o $(larvox_root)/$@
 tvoxeldict.cpp: src/voxels/TVoxel.hpp 
 	@rootcint $@ -c -p $^ src/voxels/TVoxel_linkdef.h 
+pytvoxel.o: tvoxeldict.cpp
+	g++ $(CFLAGS) $(localCFLAGS) -fPIC -c $< $(INCFLAGS) -o $@
+pytvoxel.so: src/voxels/TVoxel.o pytvoxel.o
+	g++ $(CFLAGS) $(ROOT_CFLAGS) -shared -o $@ $^ $(local_LDFLAGS) $(ROOT_LIBS) 
 .PHONY: clean
 clean:
-	rm -f $(BIN) ./*.o
+	rm -f $(BIN) ./*.o tvoxeldict.cpp tvoxeldict.h
