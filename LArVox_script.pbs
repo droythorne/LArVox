@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=1:mem=100mb,walltime=01:00:00
+#PBS -V
+sleep 20
+module unload roodaf/5.20.00
+module load roodaf/5.20.00-i686
+cd /home/epp/phraar/Documents/Programs/Voxels/sandbox/LArVox
+./LArVoxTest_HP -m 20 -R /tmp/genie_qel.root /home/epp/phraar/Documents/Programs/Voxels/events/genie-770MeVQELCC.root
+mv /tmp/genie_qel.root  /home/epp/phraar/
+
